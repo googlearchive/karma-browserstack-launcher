@@ -1,4 +1,15 @@
 var bs = require('browserstack');
+var fs = require('fs');
+var path = require('path');
+
+var CONFIG_FILE = path.join(process.env.HOME, ".browserstack.json");
+var config = (function() {
+  try {
+    return JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
+  } catch (e) {
+    return {};
+  }
+})();
 
 var BrowserStackBrowser = function(baseBrowserDecorator, name) {
   baseBrowserDecorator(this);
@@ -12,8 +23,7 @@ var BrowserStackBrowser = function(baseBrowserDecorator, name) {
     this.browser = this.browser.toLowerCase();
   }
 
-  this.client = bs.createClient({
-  });
+  this.client = bs.createClient(config);
 
   this._start = function(url) {
     var self = this;
