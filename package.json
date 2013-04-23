@@ -1,0 +1,25 @@
+{
+  "name": "karma-browserstack-launcher",
+  "version": "0.0.1",
+  "description": "A Karma plugin. Launches Browserstack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/toolkitchen/karma-browserstack-launcher"
+  },
+  "keywords": [
+    "karma-plugin",
+    "launcher",
+    "browserstack"
+  ],
+  "author": "Yvonne Yip <ykyyip@google.com>",
+  "dependencies": {
+    "browserstack": "*"
+  },
+  "peerDependencies": {
+    "karma": "~0.9"
+  }
+}
